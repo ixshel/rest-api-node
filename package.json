@@ -1,0 +1,26 @@
+{
+  "name": "node-api-rest-example",
+  "version": "1.0.0",
+  "description": "node api rest",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ixshelescamilla/rest-api-node.git"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "rest",
+    "demo",
+    "javascript"
+  ],
+  "author": "ixshel escamilla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ixshelescamilla/rest-api-node/issues"
+  },
+  "homepage": "https://github.com/ixshelescamilla/rest-api-node#readme"
+}
