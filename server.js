@@ -1,21 +1,31 @@
-var express = require("express"),
-  app = express(),
-  bodyParser = require("body-parser"),
-  methodOverride = require("method-override"),
-  mongoose = require('mongoose');
+var express = require("express"),  
+    app = express(),
+    bodyParser  = require("body-parser"),
+    methodOverride = require("method-override");
+    mongoose = require('mongoose');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));  
+app.use(bodyParser.json());  
 app.use(methodOverride());
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
-  res.send("Hello World!");
-});
-
 app.use(router);
 
+app.get('/', function (req, res) {
+  res.send("Hello world!");
+});
+
+routes = require('./routes/tvshows')(app);
+
+mongoose.connect('mongodb://localhost/tvshows', function (err, res) {
+  if (err) {
+    console.log('ERROR: connecting to Database. ' + err);
+  } else {
+    console.log('Connected to Database');
+  }
+});
+
 app.listen(3001, function () {
-  console.log("Node server running on http://localhost:3001");
+  console.log("Node server running on http://localhost:3000");
 });
