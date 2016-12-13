@@ -8,6 +8,7 @@ module.exports = function (app) {
         TVShow.find(function (err, tvshows) {
             if (!err) {
                 console.log('GET /tvshows')
+                res.setHeader('Access-Control-Allow-Origin', '*')
                 res.send(tvshows);
             } else {
                 console.log('ERROR: ' + err);
@@ -89,7 +90,7 @@ module.exports = function (app) {
     }
 
     //Link routes and functions
-    app.get('/tvshows', res.setHeader('Access-Control-Allow-Origin', '*'), findAllTVShows);
+    app.get('/tvshows', findAllTVShows);
     app.get('/tvshow/:id', findById);
     app.post('/tvshow', addTVShow);
     app.put('/tvshow/:id', updateTVShow);
