@@ -14,7 +14,6 @@ app.use(router);
 
 app.get('/', function (req, res) {
   res.send("Hello world!");
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200/');
 });
 
 routes = require('./routes/tvshows')(app);
