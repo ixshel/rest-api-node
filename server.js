@@ -14,10 +14,7 @@ app.use(router);
 
 app.get('/', function (req, res) {
   res.send("Hello world!");
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200/');
 });
 
 routes = require('./routes/tvshows')(app);
