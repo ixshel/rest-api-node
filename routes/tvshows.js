@@ -5,7 +5,6 @@ module.exports = function (app) {
 
     //GET - Return all tvshows in the DB
     findAllTVShows = function (req, res) {
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200/');
         TVShow.find(function (err, tvshows) {
             if (!err) {
                 console.log('GET /tvshows')
@@ -90,7 +89,7 @@ module.exports = function (app) {
     }
 
     //Link routes and functions
-    app.get('/tvshows', findAllTVShows);
+    app.get('/tvshows', res.setHeader('Access-Control-Allow-Origin', '*'), findAllTVShows);
     app.get('/tvshow/:id', findById);
     app.post('/tvshow', addTVShow);
     app.put('/tvshow/:id', updateTVShow);
