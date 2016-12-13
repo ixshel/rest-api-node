@@ -31,6 +31,7 @@ module.exports = function (app) {
 
     //POST - Insert a new TVShow in the DB
     addTVShow = function (req, res) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         // console.log('POST');
         // console.log(req.body);
 
@@ -51,8 +52,6 @@ module.exports = function (app) {
                 console.log('ERROR: ' + err);
             }
         });
-
-        res.setHeader('Access-Control-Allow-Origin', '*')
         res.send(tvshow);
     };
 
