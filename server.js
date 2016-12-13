@@ -27,7 +27,5 @@ mongoose.connect('mongodb://ixshel:ixshel@ds133418.mlab.com:33418/tvshowsdemo', 
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  var host = 'localhost';
-  var port = server.address().port;
-  console.log('App listening at http://%s:%s', host, port);
+  console.log("Node server running on http://localhost");
 });
