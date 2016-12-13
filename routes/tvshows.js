@@ -32,6 +32,7 @@ module.exports = function (app) {
     //POST - Insert a new TVShow in the DB
     addTVShow = function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         // console.log('POST');
         // console.log(req.body);
 
