@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 
 routes = require('./routes/tvshows')(app);
 
-mongoose.connect('mongodb://localhost/tvshows', function (err, res) {
+mongoose.connect('mongodb://ixshel:ixshel@ds133418.mlab.com:33418/tvshowsdemo', function (err, res) {
   if (err) {
     console.log('ERROR: connecting to Database. ' + err);
   } else {
