@@ -31,10 +31,6 @@ module.exports = function (app) {
 
     //POST - Insert a new TVShow in the DB
     addTVShow = function (req, res) {
-        // res.setHeader('Access-Control-Allow-Origin', '*');
-        // res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-        // console.log('POST');
-        // console.log(req.body);
 
         var tvshow = new TVShow({
             title: req.body.title,
@@ -53,9 +49,9 @@ module.exports = function (app) {
                 console.log('ERROR: ' + err);
             }
         });
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         res.send(tvshow);
     };
 
