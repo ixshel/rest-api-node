@@ -31,8 +31,8 @@ module.exports = function (app) {
 
     //POST - Insert a new TVShow in the DB
     addTVShow = function (req, res) {
-        console.log('POST');
-        console.log(req.body);
+        // console.log('POST');
+        // console.log(req.body);
 
         var tvshow = new TVShow({
             title: req.body.title,
