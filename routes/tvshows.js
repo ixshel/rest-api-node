@@ -7,8 +7,6 @@ module.exports = function (app) {
     findAllTVShows = function (req, res) {
         TVShow.find(function (err, tvshows) {
             if (!err) {
-                console.log('GET /tvshows')
-                res.setHeader('Access-Control-Allow-Origin', '*')
                 res.send(tvshows);
             } else {
                 console.log('ERROR: ' + err);
@@ -20,8 +18,6 @@ module.exports = function (app) {
     findById = function (req, res) {
         TVShow.findById(req.params.id, function (err, tvshow) {
             if (!err) {
-                console.log('GET /tvshow/' + req.params.id);
-                res.setHeader('Access-Control-Allow-Origin', '*')
                 res.send(tvshow);
             } else {
                 console.log('ERROR: ' + err);
@@ -49,7 +45,7 @@ module.exports = function (app) {
                 console.log('ERROR: ' + err);
             }
         });
-    
+
         res.send(tvshow);
     };
 
@@ -70,7 +66,6 @@ module.exports = function (app) {
                 } else {
                     console.log('ERROR: ' + err);
                 }
-                res.setHeader('Access-Control-Allow-Origin', '*')
                 res.send(tvshow);
             });
         });
